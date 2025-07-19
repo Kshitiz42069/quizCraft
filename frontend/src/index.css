@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.primaryColor{
+  @apply text-red-600 text-2xl font-bold
+}
