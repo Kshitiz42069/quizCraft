@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from 'cors';
 import cookieParser from "cookie-parser";
 import authRoutes from './routes/auth.route.js'
+import quizRoutes from './routes/quiz.route.js'
 
 dotenv.config({quiet:true});
 
@@ -19,6 +20,9 @@ app.use(cors(corsOptions));
 
 //user auth
 app.use('/user',authRoutes);
+
+//quiz interactions
+app.use('/quiz',quizRoutes);
 
 const Port = process.env.PORT || 8000;
 
