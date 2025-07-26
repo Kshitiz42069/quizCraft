@@ -19,8 +19,7 @@ const userSchema = new mongoose.Schema({
     },
     examPreference:{
         type:[String],
-        required:true,
-        validate: v => Array.isArray(v) && v.length>0,
+        required:false,
         enum:['SSC','UPSC','Banking','Railways','Defence','Other']
     },
     attempts:[{

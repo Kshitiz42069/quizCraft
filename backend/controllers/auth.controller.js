@@ -25,8 +25,8 @@ export const signUp = async(req,res)=>{
         });
 
         if(newUser){
-            sendToken(newUser._id,res);
             await newUser.save();
+            sendToken(newUser._id,res);
             res.status(200).json({
                 _id:newUser._id,
                 fullname:newUser.fullname,
@@ -37,8 +37,10 @@ export const signUp = async(req,res)=>{
             res.status(400).json({error:"Invalid User Data"});
         }
     } catch (error) {
+        console.log("Error ", error.message);
+        console.log("Sign Up Error", error);
         console.log("Error is in the signUp function");
-        res.staus(500).json({error:"Internal Server Error"});
+        res.status(500).json({error:"Internal Server Error"});
     }
 }
 
