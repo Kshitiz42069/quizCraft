@@ -1,11 +1,17 @@
+import Login from "./components/Authentication/Login/Login";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SignUp from "./components/Authentication/SignUp/SignUp";
+import Home from "./components/Homepage/Home";
+
 function App() {
   return (
-    <>
-      <h1 className=" text-7xl">Hey there this is the frontend of Project</h1>
-      <h1 className=" primaryColor">
-        Tailwind is also working
-      </h1>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/" element={<Home/>}/>
+      </Routes>
+    </Router>
   );
 }
 
