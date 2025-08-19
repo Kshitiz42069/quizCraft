@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import logo from '../../../assets/logo.png'
+import logo from '../../../../assets/logo.png'
 import { Link } from 'react-router-dom'
-import UseLogin from '../../hooks/UseLogin';
+import UseLogin from '../../../hooks/UseLogin';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -19,14 +19,14 @@ const Login = () => {
             <h2 className='text-3xl text-[#333333]'>Please enter your credentials</h2>
 
             {/* login credentials */}
-            <div className=' bg-[#E0E5FB] w-8/9 h-[40vh] p-4 flex flex-col gap-4 justify-around my-[4rem] rounded-2xl'>
-                <form action="submit" onSubmit={handleSubmit} method="post" className='flex flex-col px-[3rem] gap-10'>
+            <div className=' bg-[#E0E5FB] w-8/9 h-[50vh] p-4 flex flex-col gap-4 justify-around my-[4rem] rounded-2xl'>
+                <form action="submit" onSubmit={handleSubmit} method="post" className='flex flex-col px-[1rem] gap-10'>
                     <label htmlFor="email" className='flex flex-col gap-[1rem] w-2/3'>
-                        <p className='text-2xl'>Email</p>
+                        <p className='text-xl'>Email</p>
                         <input onChange={(e)=>setEmail(e.target.value)} type="text" placeholder='Enter your Email' className='border-[#333333] border-b-2 outline-0'/>
                     </label>
                     <label htmlFor="password" className='flex flex-col gap-[1rem] w-2/3'>
-                        <p className='text-2xl'>Password</p>
+                        <p className='text-xl'>Password</p>
                         <input onChange={(e)=>setPassword(e.target.value)} type="password" placeholder='Enter your Password' className='border-[#333333] border-b-2 outline-0'/>
                     </label>
                     <div className='flex justify-between '>
@@ -40,7 +40,7 @@ const Login = () => {
                         </div>
                     </div>
                     {/* login button */}
-                    <button type="submit" className='bg-[#898AC4] p-1 rounded-2xl text-[#E0E5FB] w-[20rem] mx-[10rem] cursor-pointer'>
+                    <button type="submit" className='bg-[#898AC4] p-1 rounded-2xl text-[#E0E5FB] w-[20rem] cursor-pointer'>
                         {loading ? <span className='loading loading-spinner'></span>: "Login"}
                     </button>
                 </form>
